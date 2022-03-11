@@ -20,11 +20,12 @@
     button, input[type="submit"], input[type="reset"] {
       background: none;
       color: inherit;
-      border: none;
-      padding: 0;
       font: inherit;
       cursor: pointer;
-      outline: inherit;
+      border: none;
+      padding: none;
+      outline: none;
+      margin: none;
     }
 
     /* Link Styles */
@@ -59,10 +60,9 @@
     /* Style the navigation bar links */
     .topnav a {
       float: left;
-      display: block;
       color: black;
       text-align: left;
-      padding-top: 41px;
+      padding-top: 39px;
       padding-bottom: 10px;
       padding-right: 10px;
       padding-left: 10px;
@@ -70,23 +70,18 @@
       text-decoration: none;
     }
 
-    /* Hide the link that should open and close the topnav on small screens */
-    .topnav .icon {
-      display: none;
-    }
-
     /* Dropdown container - needed to position the dropdown content */
     .dropdown {
       float: left;
       overflow: hidden;
+      align-items: left;
+      text-align: left;
     }
 
     /* Style the dropdown button to fit inside the topnav */
     .dropdown .dropbtn {
-      float: left;
-      display: block;
       color: black;
-      text-align: center;
+      text-align: left;
       padding-top: 39px;
       padding-bottom: 10px;
       padding-right: 10px;
@@ -98,9 +93,8 @@
     /* Style the dropdown content (hidden by default) */
     .dropdown-content {
       display: none;
+      text-align: left;
       position: absolute;
-      top: 70px;
-      left: 45px;
       z-index: 101;
     }
 
@@ -108,11 +102,16 @@
     .dropdown-content a {
       float: none;
       color: black;
-      background-color: white;
-      padding: 5px 5px;
       text-decoration: none;
       display: block;
+      padding: 5px 10px;
+      background-color: white;
       text-align: left;
+    }
+
+    /* Show the dropdown menu when the user moves the mouse over the dropdown button */
+    .dropdown:hover .dropdown-content {
+      display: block;
     }
 
     /* Style the topnav links and the dropdown button on hover */
@@ -143,53 +142,13 @@
       text-decoration: none;
     }
 
-    /* Show the dropdown menu when the user moves the mouse over the dropdown button */
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-
-    /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). 
-    Show the link that contains should open and close the topnav (.icon) */
-    @media screen and (max-width: 600px) {
-      .topnav a:not(:first-child), .dropdown .dropbtn {
-        display: none;
-      }
-      .topnav a.icon {
-        float: right;
-        display: block;
-      }
-    }
-
-    /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. 
-    This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-    @media screen and (max-width: 600px) {
-      .topnav.responsive {position: relative;}
-      .topnav.responsive .icon {
-        position: absolute;
-        right: 0;
-        top: 0;
-      }
-      .topnav.responsive a {
-        float: none;
-        display: block;
-        text-align: left;
-      }
-      .topnav.responsive .dropdown {float: none;}
-      .topnav.responsive .dropdown-content {position: relative;}
-      .topnav.responsive .dropdown .dropbtn {
-        display: block;
-        width: 100%;
-        text-align: left;
-      }
-    }
-
 
     /* Header/logo Title */
     .header {
-      padding-top: 10px;
-      padding-right: 50px;
+      top: 10px;
       padding-bottom: 0px;
-      padding-left: 50px;
+      right: 50px;
+      left: 50px;
       text-align: center;
       background: none;
       color: black;
@@ -224,82 +183,53 @@
 
 
 <body>
-  
-  <!--- <div class="navbar">
-    <a href="#">FILM</a>
-    <a href="#">iPHONE</a>
-    <a href="#">INFO</a>
-  </div> -->
 
 
-  <!--- <div class="navbar">
-    <button class="navbar a">FILM</button>
-    <div class="dropdown-content">
-      <a href="#">Salé</a>
-      <a href="#">Sucré</a>
-      <a href="#">Citronné</a>
-    <button class="navbar a">iPHONE</button>
-    <button class="navbar a">INFO</button>
-    </div>
-  </div> -->
-
-
-
-  
   <div class="topnav" id="myTopnav">
     <div class="dropdown">
       <button class="dropbtn">FILM
         <i class="fa fa-caret-down"></i>
       </button>
       <div class="dropdown-content">
-        <a href="/film-sale.html">Sale</a>
-        <a href="/film-citronne.html">Citronne</a>
-        <a href="/film-carbonise.html">Carbonise</a>
-        <a href="/film-menthole.html">Menthole</a>
-        <a href="/film-doux.html">Doux</a>
-        <a href="/film-sucre.html">Sucre</a>
-        <a href="/film-poivre.html">Poivre</a>
-        <a href="/film-amer.html">Amer</a>
+        <a href="/film-sale.html">Salty</a>
+        <a href="/film-citronne.html">Acidic</a>
+        <a href="/film-carbonise.html">Charred</a>
+        <a href="/film-menthole.html">Minty</a>
+        <a href="/film-doux.html">Mild</a>
+        <a href="/film-sucre.html">Sweet</a>
+        <a href="/film-poivre.html">Peppery</a>
+        <a href="/film-amer.html">Bitter</a>
       </div>
     </div>
+
     <div class="dropdown">
       <button class="dropbtn">iPHONE
         <i class="fa fa-caret-down"></i>
       </button>
       <div class="dropdown-content">
-        <a href="/home1.html", style="position:relative; left: 50px; width: 100px;">Home (1)</a>
-        <a href="/feelslikehome1.html", style="position:relative; left: 50px; width: 100px;">Feels Like Home (1)</a>
-        <a href="/home2.html", style="position:relative; left: 50px; width: 100px;">Home (2)</a>
-        <a href="/feelslikehome2.html", style="position:relative; left: 50px; width: 100px;">Feels Like Home (2)</a>
-        <a href="/home3.html", style="position:relative; left: 50px; width: 100px;">Home (3)</a>
-        <a href="/feelslikehome3.html", style="position:relative; left: 50px; width: 100px;">Feels Like Home (3)</a>
-        <a href="/home4.html", style="position:relative; left: 50px; width: 100px;">Home (4)</a>
+        <a href="/home1.html">Home (1)</a>
+        <a href="/feelslikehome1.html">Feels Like Home (1)</a>
+        <a href="/home2.html">Home (2)</a>
+        <a href="/feelslikehome2.html">Feels Like Home (2)</a>
+        <a href="/home3.html">Home (3)</a>
+        <a href="/feelslikehome3.html">Feels Like Home (3)</a>
+        <a href="/home4.html">Home (4)</a>
       </div>
     </div>
+
     <div class="dropdown">
       <button class="dropbtn">FREETIME
         <i class="fa fa-caret-down"></i>
       </button>
       <div class="dropdown-content">
-        <a href="/illustration.html", style="position:relative; left: 117.5px; width: 100px;">Illustration</a>
+        <a href="/illustration.html">Illustration</a>
       </div>
     </div>
+    
     <a href="/info.html">INFO</a>
-    <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+
   </div>
   
-
-
-  <script>
-  function myFunction() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-      x.className += " responsive";
-    } else {
-      x.className = "topnav";
-    }
-  }
-  </script>
 
 
 
